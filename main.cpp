@@ -2,7 +2,6 @@
 #include "window.h"
 #include "mainmenu.h"
 
-
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	CreateHGEWindow(640, 480, "Nanite Game");
 

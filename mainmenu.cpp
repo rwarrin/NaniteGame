@@ -1,5 +1,6 @@
 #include "mainmenu.h"
 #include "resources.h"
+#include "game.h"
 
 #include <hgesprite.h>
 
@@ -22,6 +23,8 @@ bool MainMenuFrameFunction() {
 
 	if(hge->Input_KeyDown(HGEK_SPACE)) {
 		// Start Game
+		hge->System_SetState(HGE_FRAMEFUNC, GameFrameFunction);
+		hge->System_SetState(HGE_RENDERFUNC, GameRenderFunction);
 	}
 
 	return false;
