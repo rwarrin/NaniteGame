@@ -15,14 +15,20 @@ void MainMenu() {
 	hge->System_SetState(HGE_RENDERFUNC, MainMenuRenderFunction);
 }
 
-bool MainMenuFrameFunction() {
+void DeleteMainMenu() {
+	hge->Texture_Free(mainmenutexture);
+	delete mainmenusprite;
+}
 
+bool MainMenuFrameFunction() {
 	if(hge->Input_KeyDown(HGEK_ESCAPE)) {
 		return true;
 	}
 
 	if(hge->Input_KeyDown(HGEK_SPACE)) {
 		// Start Game
+		InitiateGame();
+		DeleteMainMenu();
 		hge->System_SetState(HGE_FRAMEFUNC, GameFrameFunction);
 		hge->System_SetState(HGE_RENDERFUNC, GameRenderFunction);
 	}

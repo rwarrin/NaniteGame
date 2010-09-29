@@ -2,6 +2,7 @@
 #define MAINMENU_H
 
 void MainMenu();
+void DeleteMainMenu();
 bool MainMenuFrameFunction();
 bool MainMenuRenderFunction();
 
